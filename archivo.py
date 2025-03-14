@@ -70,7 +70,7 @@ def columnas(op):
             'JANUARY_2023', 'FEBRUARY_2023', 'MARCH_2023', 'APRIL_2023', 'MAY_2023','JUNE_2023', 'JULY_2023', 'AUGUST_2023', 
             'SEPTEMBER_2023', 'OCTOBER_2023', 'NOVEMBER_2023', 'DECEMBER_2023', 'JANUARY_2024', 'FEBRUARY_2024', 'MARCH_2024', 
             'APRIL_2024', 'MAY_2024', 'JUNE_2024', 'JULY_2024', 'AUGUST_2024', 'SEPTEMBER_2024', 'OCTOBER_2024', 'NOVEMBER_2024', 
-            'DECEMBER_2024', 'JANUARY_2025', 'FEBRUARY_2025', 'MARCH_2025' ]
+            'DECEMBER_2024', 'JANUARY_2025', 'FEBRUARY_2025', 'MARCH_2025', 'Total' ]
 
     return col
 
@@ -135,6 +135,8 @@ def opcion_3():
         if reporte is not None:
             guardar_archivo(reporte)
 
+def opcion_4():
+    return 
 
 # Función para salir
 def salir():
@@ -146,8 +148,9 @@ def mostrar_menu():
     opciones = {
         "1": {'Descripcion': "Reporte Venta Generales", 'Funcion': opcion_1},
         "2": {'Descripcion': "Reporte Venta por Agentes", 'Funcion': opcion_2},
-        "3": {'Descripcion': "MRP", 'Funcion': opcion_3},
-        "4": {'Descripcion': "Salir", 'Funcion': salir}
+        "3": {'Descripcion': "Reporte por Clientes", 'Funcion': opcion_3},
+        "4": {'Descripcion': "MRP", 'Funcion': opcion_4},
+        "5": {'Descripcion': "Salir", 'Funcion': salir}
     }
 
     while True:
@@ -158,7 +161,7 @@ def mostrar_menu():
         opcion = input('Elije una opción: ')
         if opcion in opciones:
             opciones[opcion]['Funcion']()
-            if opcion == "4":
+            if opcion == "5":
                 break
         else:
             print('Opción no válida. Inténtalo de nuevo.')
